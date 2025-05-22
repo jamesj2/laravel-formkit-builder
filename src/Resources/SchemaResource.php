@@ -19,7 +19,7 @@ class SchemaResource extends JsonResource
     }
 
     /**
-     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     * @SuppressWarnings("unused")
      * @return array<mixed>
      */
     public function toArray(Request $request): array

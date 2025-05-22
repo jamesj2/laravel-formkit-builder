@@ -9,8 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class AcceptsTest extends TestCase
 {
-    /** @test */
-    public function it_can_return_correct_value(): void
+    public function test_it_can_return_correct_value(): void
     {
         $attribute = new Accepts(['pdf', 'txt', 'jpg']);
 

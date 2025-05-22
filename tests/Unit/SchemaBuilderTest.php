@@ -10,8 +10,7 @@ use Kozmixb\LaravelFormKitBuilder\Tests\TestCase;
 
 class SchemaBuilderTest extends TestCase
 {
-    /** @test */
-    public function it_can_build_schema(): void
+    public function test_it_can_build_schema(): void
     {
         $result = (new FormSchemaBuilder())->build($this->getForm());
 

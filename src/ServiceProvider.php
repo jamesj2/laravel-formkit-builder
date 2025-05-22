@@ -8,7 +8,6 @@ use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
 /**
- * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 class ServiceProvider extends BaseServiceProvider implements DeferrableProvider
 {

@@ -6,14 +6,15 @@ namespace Kozmixb\LaravelFormKitBuilder\Tests\Unit\Attributes;
 
 use Kozmixb\LaravelFormKitBuilder\Attributes as A;
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 class AttributesTest extends TestCase
 {
-    /** 
-     * @test
+    /**
      * @dataProvider provider
      */
-    public function it_can_return_correct_value(string $class, string $key): void
+    #[DataProvider('provider')]
+    public function test_it_can_return_correct_value(string $class, string $key): void
     {
         $attribute = new $class('test');
 
@@ -22,7 +23,7 @@ class AttributesTest extends TestCase
     }
 
     /** @return array<string, array<string>> */
-    public function provider(): array
+    public static function provider(): array
     {
         return [
             'cols' => [A\Cols::class, 'cols'],

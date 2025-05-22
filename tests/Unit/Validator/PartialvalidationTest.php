@@ -6,14 +6,12 @@ namespace Kozmixb\LaravelFormKitBuilder\Tests\Unit\Validator;
 
 use Kozmixb\LaravelFormKitBuilder\Tests\TestCase;
 use Kozmixb\LaravelFormKitBuilder\ValidationFactory;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 class PartialValidationTest extends TestCase
 {
-    /** 
-     * @test
-     * @dataProvider provider
-     */
-    public function it_can_convert_partial_laravel_validations(string $from, string $to): void
+    #[DataProvider('provider')]
+    public function test_it_can_convert_partial_laravel_validations(string $from, string $to): void
     {
         $result = ValidationFactory::convertRule($from);
 
@@ -21,7 +19,7 @@ class PartialValidationTest extends TestCase
     }
 
     /** @return array<string, string[]> */
-    public function provider(): array
+    public static function provider(): array
     {
         return [
             'between:' => ['between:apple,pearl', 'between:apple,pearl'],

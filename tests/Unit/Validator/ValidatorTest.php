@@ -10,8 +10,7 @@ use Kozmixb\LaravelFormKitBuilder\ValidationFactory;
 
 class ValidatorTest extends TestCase
 {
-    /** @test */
-    public function it_can_transform_array(): void
+    public function test_it_can_transform_array(): void
     {
         $validation = ['required', 'numeric', 'in:10,11,12'];
 
@@ -20,8 +19,7 @@ class ValidatorTest extends TestCase
         $this->assertEquals('required|number|is:10,11,12', $result->value());
     }
 
-    /** @test */
-    public function it_can_transform_string(): void
+    public function test_it_can_transform_string(): void
     {
         $validation = 'required|numeric|in:10,11,12';
 
@@ -30,7 +28,6 @@ class ValidatorTest extends TestCase
         $this->assertEquals('required|number|is:10,11,12', $result->value());
     }
 
-    /** @test */
     public function it_can_drop_validations(): void
     {
         $validation = [Rule::in(['test', 'invalid']), 'required_if', 'nullable', 'array'];
